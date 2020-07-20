@@ -1,0 +1,61 @@
+<html>
+<head>
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+    <!-- Load the webcam library -->
+    <script src="webcam.js"></script>
+    <!-- Load the dataset class -->
+    <script src="rps-dataset.js"></script>
+    <title>Rock Paper Scissors Classifier</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Rock Paper Scissors Spock & Lizard with Transfer Learning</h1>
+            </div>
+	   </div>
+        <br>
+        
+        <div class="row">
+		      <div class="col-md-7 text-center">
+                  <video autoplay playsinline muted id="wc" width="300" height="300"></video>
+                  <hr>
+                  <!--5 buttons for each sample image we need to capture-->
+                  	<button type="button" id="0" onclick="handleButton(this)" >Rock</button>
+                    <button type="button" id="1" onclick="handleButton(this)" >Paper</button>
+                    <button type="button" id="2" onclick="handleButton(this)" >Scissors</button>
+                  	<button type="button" id="3" onclick="handleButton(this)" >Spock</button>
+	                <button type="button" id="4" onclick="handleButton(this)" >Lizard</button>
+                  <!--to output the no of samples collected-->
+                    <div id="rocksamples">Rock Samples:</div>
+                    <div id="papersamples">Paper Samples:</div>
+                    <div id="scissorssamples">Scissors Samples:</div>
+                  	<div id="spocksamples">Spock Samples:</div>
+	                <div id="lizardsamples">Lizard Samples:</div>
+                  <!--button to train the model-->
+                    <button type="button" id="train" onclick="doTraining()" >Train Network</button>
+                  <br>
+                 <p>click 'Predict Me' to see predictictions.</p>
+                  <!--button to start predictions-->
+                <button type="button" id="predicting" onclick="predictMe()" >Predict Me</button>
+                  <!--button to stop predictions-->
+                <button type="button" id="stopPredicting" onclick="stopPredicting()" >Stop Predicting</button>
+		      </div>
+            <br>
+            <!--to display the prediction/ output the predicted result-->
+           <div class="col-md-5 text-center">
+               <h2 id="prediction"> </h2>
+            </div>
+	   </div>
+ 
+        
+    </div>
+     
+</body>
+     <!-- Loading newindexTL.js script -->
+<script src="newindexTL.js"></script>
+</html>
